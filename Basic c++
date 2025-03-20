@@ -1,0 +1,232 @@
+//print Hello
+#include <iostream>
+int main()
+{
+	std::cout<<"Hello World"<<std::endl<<"Tushar";
+	return 0;
+}
+
+//input in c++
+#include<iostream>
+using namespace std;//this will write "std::" before all function
+
+int main() {
+	int x;
+	cin>>x;
+	cout<<"value of x :"<<x;
+	return 0;
+}
+
+//#include<bits/stdc++.h>//all packages are present in it
+
+//datatype in c++
+//1. int 2.long 3.long long 4.float 5.double 6.string and getline 7.char
+
+//if-else statements
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	int age;
+	cin>>age;
+	if(age>=18) {
+		cout>>"you are an adult";
+	}
+	else {
+		cout>>"you can do anything";
+	}
+	return 0;
+}
+
+//switch case
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	int day;
+	cin>>day;
+	switch(day) {
+	case 1:
+		cout<<"Monday";
+		break;
+	case 2:
+		cout<<"Tuesday";
+		break;
+	case 3:
+		cout<<"Wednesday";
+		break;
+	case 4:
+		cout<<"Thursday";
+		break;
+	case 5:
+		cout<<"Friday";
+		break;
+	case 6:
+		cout<<"Saturday";
+		break;
+	case 7:
+		cout<<"Sunday";
+		break;
+	}
+	cout<<"Check";
+	return 0;
+}
+
+
+//Arrays and Strings
+
+//1D-Array
+#include<bits/stdc++.h>
+using namespace std;
+int arr[5];
+cin>>arr[0]>>arr[1]>>arr[2]>>arr[3]>>arr[4];//6 4 7 8 3
+arr[3]=16;                                 //arr[3]=16
+cout<<arr[3];
+return 0;
+}
+
+//2D-Array
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	int arr[3][3];
+	arr[1][2]=78;
+	cout<<arr[1][2];//78 other will give a garbage value;
+}
+
+//String
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	string s="Tushar Kanti Bhattacharya";
+	int length=s.size();
+	cout<<s[2];//s
+	cout<<s[length-1];//a
+	s[length-1]='z';//string stores char on itself.
+	return 0;
+}
+
+//For loop
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+//i=1 2 3 4 5 (6//exit())
+	for(int i=0; i<=10; i++) {
+		cout<< "count "<<i<<endl;
+	}
+	cout<< i << endl;
+	return 0;
+}
+
+//while loop
+int i=2;
+while(i<=1) {
+	cout<<"Tushar"<<i<<endl;
+	i=i+1;
+}
+return 0;
+}
+
+//Do while loop
+int i=2;
+do {
+	cout<<"count"<<i<<endl;
+	i=i+1;
+}
+while(i<=1);
+cout<<i<<endl;
+return 0;
+}
+
+
+       //Function in C++
+
+// 1. By reference  2. By value 
+
+// is block of code
+// used to modularise code
+// used to maintain "DRY" concept
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void printName(name) {
+	cout<<"Good Morning : "<<name;
+}
+int main() {
+	string name;
+	cin>>name;
+	printName(name);
+	return 0;
+}
+
+
+//Take two number and print sum of it
+
+
+int main() {
+	int num1,num2;
+	cin>>num1>>num2;
+	int num3=num1+num2;
+	cout<<num3;
+	return 0;
+}
+
+//using 'DRY' or function on it ---->
+
+int sum(int num1,int num2) {
+	int num3=num1+num2;
+	return num3;
+}
+
+int main() {
+	int num1,num2;
+	cin>>num1>>num2;
+	int result = sum(num1,num2);
+	cout<<result;
+}
+
+
+// pass By value
+// copy the original value and run function but the original value remain same
+
+void doSomething(int num) {
+	num+=3;
+	cout<<num<<endl;
+}
+int main() {
+	int num=10;
+			       |
+	doSomething(num);//13  | is because of pass By value
+	cout<<num<<endl;//10   |
+	return 0;
+}
+
+
+//  pass By reference
+//it changes the original value on it
+void doSomething(string &s) { // " & " is the symbol of pass by reference
+	s[0]="T";
+	cout<<s<<endl;
+}
+int main() {
+	string s="Tushar";
+	doSomething(s);
+	cout<<s<<endl;
+	return 0;
+}
+
+// pass BY reference
+void doSomething(int arr[],int n) {
+	arr[0]+=100;
+	cout<<"Value of inside function : "<< arr[0]<<endl;
+}
+int main() {
+	int n=5;
+	int arr[n];
+	for(int i=0; i<n; i++) {
+		cin>>arr[i];
+	}
+
+	doSomething(arr,n);
+	cout<<"value inside int main : "<<arr[0]<<endl;
+	return 0;
+}
